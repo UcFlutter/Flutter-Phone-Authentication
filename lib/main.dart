@@ -51,8 +51,9 @@ class _MyAppState extends State<MyApp> {
               padding: const EdgeInsets.all(10.0),
               child: Visibility(
                 visible: otpFieldVisibility,
-                child: const TextField(
-                  decoration: InputDecoration(
+                child:  TextField(
+                  controller: otpController,
+                  decoration: const InputDecoration(
                     hintText: 'OTP Code',
                     labelText: 'OTP',
                     border: OutlineInputBorder(),
