@@ -16,6 +16,7 @@ class _MyAppState extends State<MyApp> {
 
   final TextEditingController phoneController = TextEditingController();
   String userNumber = '';
+  var otpFieldVisibility = false;
 
   @override
   Widget build(BuildContext context) {
@@ -46,13 +47,16 @@ class _MyAppState extends State<MyApp> {
                 },
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(10.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'OTP Code',
-                  labelText: 'OTP',
-                  border: OutlineInputBorder(),
+             Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Visibility(
+                visible: otpFieldVisibility,
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: 'OTP Code',
+                    labelText: 'OTP',
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
             ),
